@@ -1,5 +1,7 @@
 import React, {Component, useState} from 'react';
 import {Link, Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import DrawCalendar from './Component/drawCalendar';
 import Calendar from './Component/fullCalendar';
 import LoginPage from './Component/loginPage';
@@ -18,29 +20,43 @@ function App(){
 
   return(
     <Router>
-      <header>
-        <Link to="/">
-          <button>home</button>
-        </Link>
-        <Link to="/drawCalendar">
-          <button>draw</button>
-        </Link>
-        {authenticated ? (
-          <LogoutButton logout={logout}/>
-        ) : (
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-        )
-      }
-        <Link to="/calendar">
-          <button>calendar</button>
-        </Link>
-        <Link to="/profile">
-          <button>profile</button>
-        </Link>
-      </header>
-      <hr/>
+      <nav class="navbar navbar-expand-md navbar-dark bg-info">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav align-self-end" id="nav">
+            <li class="nav-item">
+              <Link to="/">
+                <a herf class="navbar-brand">Home</a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/drawCalendar">
+               <a href class="navbar-brand">draw</a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              {authenticated ? (
+                <LogoutButton logout={logout}/>
+                ) : (
+                  <Link to="/login">
+                    <a href class="navbar-brand">Login</a>
+                  </Link>
+                )
+                }
+            </li>
+            <li class="nav-item">
+              <Link to="/calendar">
+                <a href class="navbar-brand">Calendar</a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/profile">
+                <a href class="navbar-brand">Profile</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
       <main>
         <Switch>
           <Route exact path="/" component={HomePage}/>
