@@ -42,6 +42,7 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `lecture` (
   `id_lecture` INT NOT NULL AUTO_INCREMENT,
+  `name_lecture` VARCHAR(45) NULL,
   `start_lecture` VARCHAR(45) NULL,
   `finish_lecture` VARCHAR(45) NULL,
   `flag` INT NULL,
@@ -71,6 +72,7 @@ CREATE TABLE `assignment` (
 
 CREATE TABLE `work`(
   `id_work` INT NOT NULL AUTO_INCREMENT,
+  `name_work` VARCHAR(45) NULL,
   `start_date` VARCHAR(45) NULL,
   `finish_date` VARCHAR(45) NULL,
   `id_student` VARCHAR(45) NOT NULL,
