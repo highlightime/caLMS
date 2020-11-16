@@ -36,12 +36,12 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`));
 
 CREATE TABLE `subject` (
-  `id_subject` INT NOT NULL,
+  `id_subject` INT NOT NULL AUTO_INCREMENT,
   `name_subject` VARCHAR(45) NULL,
   PRIMARY KEY (`id_subject`));
 
 CREATE TABLE `lecture` (
-  `id_lecture` INT NOT NULL,
+  `id_lecture` INT NOT NULL AUTO_INCREMENT,
   `start_lecture` VARCHAR(45) NULL,
   `finish_lecture` VARCHAR(45) NULL,
   `flag` INT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `lecture` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE `assignment` (
-  `id_assignment` INT NOT NULL,
+  `id_assignment` INT NOT NULL AUTO_INCREMENT,
   `start_date` VARCHAR(45) NULL,
   `finish_date` VARCHAR(45) NULL,
   `name_assignment` VARCHAR(45) NULL,
@@ -67,10 +67,10 @@ CREATE TABLE `assignment` (
     FOREIGN KEY (`id_subject`)
     REFERENCES `subject` (`id_subject`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 
 CREATE TABLE `work`(
-  `id_work` INT NOT NULL,
+  `id_work` INT NOT NULL AUTO_INCREMENT,
   `start_date` VARCHAR(45) NULL,
   `finish_date` VARCHAR(45) NULL,
   `id_student` VARCHAR(45) NOT NULL,
@@ -80,5 +80,5 @@ CREATE TABLE `work`(
     FOREIGN KEY (`id_student`)
     REFERENCES `student` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
  ```
