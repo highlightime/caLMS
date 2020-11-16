@@ -9,11 +9,11 @@ function LogoutButton({logout, history}){
 
     return(
         <li class="nav-item">
-         <a href class="navbar-brand" onClick={handleClick} style={{cursor:"pointer"}}>Logout</a>
+         <a href class="navbar-brand" onClick={handleClick} style={{cursor:"pointer"}}>
+             <img src="https://user-images.githubusercontent.com/49060014/99229255-1d004e80-2831-11eb-87cd-29f1adbb4d6e.png" width={95 + 'px'}/>
+         </a>
         </li>
     )
-
-    //return <button onClick = {handleClick} class="btn btn-outline-info">Logout</button>
 }
 
 export default withRouter(LogoutButton)

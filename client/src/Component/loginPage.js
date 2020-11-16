@@ -21,18 +21,18 @@ function LoginPage({authenticated, login, location}){
     if(authenticated) return <Redirect to={from}/>
 
     return(
-        <div class="wrapper fadeIn">
+        <div className="wrapper fadeIn">
             <div id="formContent">
-                <div class="fadeIn first">
+                <div className="fadeIn first">
                     <img src={userLogo} id='icon'/>
                 </div>
                 <form>
-                    <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" class="fadeIn second" name="login" placeholder="ID"/>
-                    <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" class="fadeIn third" name="login" placeholder="password"/>
-                    <input type="button" onClick={handleClick} class="fadeIn fourth" value="Log In"/>
+                    <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" className="fadeIn second" name="login" placeholder="ID"/>
+                    <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" className="fadeIn third" name="login" placeholder="password"/>
+                    <input type="button" onClick={handleClick} className="fadeIn fourth" value="Log In"/>
                 </form>
                 <div id="formFooter">
-                    <a class="underlineHover" href="http://lms.knu.ac.kr" target="_blank">Forgot Password?</a>
+                    <a className="underlineHover" href="http://lms.knu.ac.kr" target="_blank">Forgot Password?</a>
                 </div>
             </div>
         
