@@ -23,4 +23,57 @@ import MySQLdb
 db=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin","Qwerty12^^","calms")
 ```
 
+## database table 생성
+```
+CREATE TABLE `student` (
+  `id` VARCHAR(45) NOT NULL,
+  `pw` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
 
+CREATE TABLE `subject` (
+  `id_subject` INT NOT NULL,
+  `name_subject` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_subject`));
+
+CREATE TABLE `lecture` (
+  `id_lecture` INT NOT NULL,
+  `start_lecture` VARCHAR(45) NULL,
+  `finish_lecture` VARCHAR(45) NULL,
+  `flag` INT NULL,
+  `id_subject` INT NOT NULL,
+  PRIMARY KEY (`id_lecture`),
+  INDEX `fk_lecture_subject_idx` (`id_subject` ASC) VISIBLE,
+  CONSTRAINT `fk_lecture_subject`
+    FOREIGN KEY (`id_subject`)
+    REFERENCES `subject` (`id_subject`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `assignment` (
+  `id_assignment` INT NOT NULL,
+  `start_date` VARCHAR(45) NULL,
+  `finish_date` VARCHAR(45) NULL,
+  `name_assignment` VARCHAR(45) NULL,
+  `flag` INT NULL,
+  `id_subject` INT NOT NULL,
+    PRIMARY KEY (`id_assignment`),
+  INDEX `fk_assignment_subject_idx` (`id_subject` ASC) VISIBLE,
+  CONSTRAINT `fk_assignment_subject`
+    FOREIGN KEY (`id_subject`)
+    REFERENCES `subject` (`id_subject`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+
+CREATE TABLE `work`(
+  `id_work` INT NOT NULL,
+  `start_date` VARCHAR(45) NULL,
+  `finish_date` VARCHAR(45) NULL,
+  `id_student` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_work`),
+  INDEX `fk_work_student_idx` (`id_student` ASC) VISIBLE,
+  CONSTRAINT `fk_work_student`
+    FOREIGN KEY (`id_student`)
+    REFERENCES `student` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ ```
