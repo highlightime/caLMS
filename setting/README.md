@@ -25,6 +25,11 @@ db=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com
 
 ## database table 생성
 ```
+drop table work;
+drop table assignment;
+drop table lecture;
+drop table subject;
+drop table student;
 CREATE TABLE `student` (
   `id` VARCHAR(45) NOT NULL,
   `pw` VARCHAR(45) NULL,
