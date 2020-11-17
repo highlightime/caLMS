@@ -62,7 +62,7 @@ for page in range(2,5):
                 break
             start,finish=lecture_date.text.split("~")
             a,b=start.split(':',maxsplit=1)
-            sql=f"REPLACE INTO lecture(name_lecture,start_lecture,id_subject) values('{lecture_name.text}','{b}',{row});"
+            sql=f"REPLACE INTO lecture(name_lecture,start_lecture,finish_lecture,id_subject) values('{lecture_name.text}','{b}','{finish}',{row});"
             #print(sql)
             #print(m)
             try:
@@ -92,7 +92,8 @@ for page in range(2,5):
             break
         assign_name=driver.find_element_by_css_selector('#content_text > table > tbody > tr:nth-child(1) > td')
         assign_date=driver.find_element_by_css_selector('#content_text > table > tbody > tr:nth-child(4) > td')
-        sql=f"REPLACE INTO assignment(name_assignment,finish_assignment,id_subject) values('{assign_name.text}','{assign_date.text}',{row});"
+        assign_start=driver.find_element_by_css_selector('#content_text > table > tbody > tr:nth-child(3) > td')
+        sql=f"REPLACE INTO assignment(name_assignment,finish_assignment,start_assignment,id_subject) values('{assign_name.text}','{assign_date.text}','{assign_start.text}',{row});"
         #print(sql)
         try:
             curs.execute(sql.encode('utf8'))
