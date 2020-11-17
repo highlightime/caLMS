@@ -37,7 +37,7 @@ CREATE TABLE `student` (
 
 CREATE TABLE `subject` (
   `id_subject` INT NOT NULL AUTO_INCREMENT,
-  `name_subject` VARCHAR(45) NULL,
+  `name_subject` VARCHAR(45) NULL UNIQUE,
   PRIMARY KEY (`id_subject`));
 
 CREATE TABLE `lecture` (
