@@ -57,8 +57,8 @@ CREATE TABLE `lecture` (
 
 CREATE TABLE `assignment` (
   `id_assignment` INT NOT NULL AUTO_INCREMENT,
-  `start_date` VARCHAR(45) NULL,
-  `finish_date` VARCHAR(45) NULL,
+  `start_assignment` VARCHAR(45) NULL,
+  `finish_assignment` VARCHAR(45) NULL,
   `name_assignment` VARCHAR(45) NULL,
   `flag` INT NULL,
   `id_subject` INT NOT NULL,
@@ -73,8 +73,8 @@ CREATE TABLE `assignment` (
 CREATE TABLE `work`(
   `id_work` INT NOT NULL AUTO_INCREMENT,
   `name_work` VARCHAR(45) NULL,
-  `start_date` VARCHAR(45) NULL,
-  `finish_date` VARCHAR(45) NULL,
+  `start_work` VARCHAR(45) NULL,
+  `finish_work` VARCHAR(45) NULL,
   `id_student` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_work`),
   INDEX `fk_work_student_idx` (`id_student` ASC) VISIBLE,
