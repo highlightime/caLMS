@@ -1,5 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 .App {
   text-align: center;
+}
+
+div {
+  font-family: "Jua", sans-serif;
+}
+
+.footer {
+  background-color: black;
 }
 
 .App-logo {

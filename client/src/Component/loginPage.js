@@ -24,12 +24,14 @@ function LoginPage({authenticated, login, location}){
         <div className="wrapper fadeIn">
             <div id="formContent">
                 <div className="fadeIn first">
-                    <img src={userLogo} id='icon'/>
+                    <img src={'https://user-images.githubusercontent.com/49060014/99343411-3062f680-28d1-11eb-8d4c-59c4b04d4e3e.png'} id='icon'/>
                 </div>
                 <form>
-                    <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" className="fadeIn second" name="login" placeholder="ID"/>
-                    <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" className="fadeIn third" name="login" placeholder="password"/>
-                    <input type="button" onClick={handleClick} className="fadeIn fourth" value="Log In"/>
+                    <br/>
+                    <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" className="fadeIn second" name="login" placeholder="아이디" style={{fontSize:25+'px'}}/>
+                    <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" className="fadeIn third" name="login" placeholder="비밀번호" style={{fontSize:25+'px'}}/>
+                    
+                    <input type="button" onClick={handleClick} className="fadeIn fourth" value="로그인" style={{fontSize:25+'px'}}/>
                 </form>
                 <div id="formFooter">
                     <a className="underlineHover" href="http://lms.knu.ac.kr" target="_blank">Forgot Password?</a>
