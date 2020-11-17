@@ -24,9 +24,11 @@ for page in range(2,5):
     driver.get('https://lms.knu.ac.kr/ilos/main/main_form.acl')
     submain_page=driver.find_element_by_xpath('//*[@id="contentsIndex"]/div[2]/div[2]/ol/li[%s]/em' %page).click()
     subject_name=driver.find_element_by_css_selector('#welcome_form > div.welcome_title.site-mouseover-color > div > span.welcome_subject')
+    sql=f"INSERT IGNORE INTO subject(name_subject) values('{subject_name.text}');"
+    #print(sql)
     try:
-        val=subject_name.text # 중복데이터가 있는 경우 추가 안 함
-        curs.execute("INSERT IGNORE INTO subject(name_subject) values('%s');" %val)
+        val=subject_name.text
+        curs.execute(sql)
     except:
         print("insert error")
         conn.close()
@@ -36,6 +38,7 @@ for page in range(2,5):
     w=0
     m=0
     sql=f"SELECT id_subject FROM subject WHERE name_subject='{val}';"
+    #print(sql)
     try:
         curs.execute(sql)
     except:
@@ -60,7 +63,8 @@ for page in range(2,5):
             start,finish=lecture_date.text.split("~")
             a,b=start.split(':',maxsplit=1)
             sql=f"REPLACE INTO lecture(name_lecture,start_lecture,id_subject) values('{lecture_name.text}','{b}',{row});"
-            print(sql)
+            #print(sql)
+            #print(m)
             try:
                 curs.execute(sql.encode('utf8'))
                 print("Inserted row of data.")
@@ -89,8 +93,9 @@ for page in range(2,5):
         assign_name=driver.find_element_by_css_selector('#content_text > table > tbody > tr:nth-child(1) > td')
         assign_date=driver.find_element_by_css_selector('#content_text > table > tbody > tr:nth-child(4) > td')
         sql=f"REPLACE INTO assignment(name_assignment,finish_assignment,id_subject) values('{assign_name.text}','{assign_date.text}',{row});"
+        #print(sql)
         try:
-            curs.execute(sql)
+            curs.execute(sql.encode('utf8'))
             print("Inserted row(s) of data.")
         except:
             print("insert error")
