@@ -33,12 +33,12 @@ drop table student;
 CREATE TABLE `student` (
   `id` VARCHAR(45) NOT NULL,
   `pw` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))charset = utf8;;
+  PRIMARY KEY (`id`))charset = utf8;
 
 CREATE TABLE `subject` (
   `id_subject` INT NOT NULL AUTO_INCREMENT,
   `name_subject` VARCHAR(45) NULL UNIQUE,
-  PRIMARY KEY (`id_subject`))charset = utf8;;
+  PRIMARY KEY (`id_subject`))charset = utf8;
 
 CREATE TABLE `lecture` (
   `id_lecture` INT NOT NULL AUTO_INCREMENT,
@@ -53,7 +53,7 @@ CREATE TABLE `lecture` (
     FOREIGN KEY (`id_subject`)
     REFERENCES `subject` (`id_subject`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)charset = utf8;;
+    ON UPDATE NO ACTION)charset = utf8;
 
 CREATE TABLE `assignment` (
   `id_assignment` INT NOT NULL AUTO_INCREMENT,
@@ -68,7 +68,7 @@ CREATE TABLE `assignment` (
     FOREIGN KEY (`id_subject`)
     REFERENCES `subject` (`id_subject`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)charset = utf8;;
+    ON UPDATE NO ACTION)charset = utf8;
 
 CREATE TABLE `work`(
   `id_work` INT NOT NULL AUTO_INCREMENT,
@@ -82,5 +82,5 @@ CREATE TABLE `work`(
     FOREIGN KEY (`id_student`)
     REFERENCES `student` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)charset = utf8;;
+    ON UPDATE NO ACTION)charset = utf8;
  ```
