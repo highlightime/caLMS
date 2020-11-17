@@ -76,6 +76,7 @@ CREATE TABLE `work`(
   `start_work` VARCHAR(45) NULL,
   `finish_work` VARCHAR(45) NULL,
   `id_student` VARCHAR(45) NOT NULL,
+  `color` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_work`),
   INDEX `fk_work_student_idx` (`id_student` ASC) VISIBLE,
   CONSTRAINT `fk_work_student`
