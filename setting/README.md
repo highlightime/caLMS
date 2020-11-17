@@ -42,7 +42,7 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `lecture` (
   `id_lecture` INT NOT NULL AUTO_INCREMENT,
-  `name_lecture` VARCHAR(45) NULL,
+  `name_lecture` VARCHAR(45) NULL UNIQUE,
   `start_lecture` VARCHAR(45) NULL,
   `finish_lecture` VARCHAR(45) NULL,
   `flag` INT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `assignment` (
   `id_assignment` INT NOT NULL AUTO_INCREMENT,
   `start_assignment` VARCHAR(45) NULL,
   `finish_assignment` VARCHAR(45) NULL,
-  `name_assignment` VARCHAR(45) NULL,
+  `name_assignment` VARCHAR(45) NULL UNIQUE,
   `flag` INT NULL,
   `id_subject` INT NOT NULL,
     PRIMARY KEY (`id_assignment`),
