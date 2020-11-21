@@ -2,7 +2,7 @@ import requests
 from selenium import webdriver
 '''
 import MySQLdb
-conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin","Qwerty12^^","calms")
+conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin","<pwd>","calms")
 curs=conn.cursor()
 '''
 options=webdriver.ChromeOptions()
@@ -27,7 +27,7 @@ except:
 conn.commit()
 '''
 driver.find_element_by_name('usr_id').send_keys('yeahl97')
-driver.find_element_by_name('usr_pwd').send_keys('Qwerty12^^')
+driver.find_element_by_name('usr_pwd').send_keys('<pwd>')
 try:
     driver.find_element_by_xpath('//*[@id="myform"]/div/div/div/div[1]').click()
 except:
