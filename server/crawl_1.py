@@ -2,10 +2,12 @@ import requests
 from selenium import webdriver
 import MySQLdb
 
+# Database connection
 conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
 curs=conn.cursor()
 print("connected to database")
 
+# set the chrome driver
 options=webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('window-size=1920x1080')
@@ -17,13 +19,22 @@ options.add_argument("--remote-debugging-port=9222")
 driver=webdriver.Chrome(executable_path='./chromedriver',chrome_options=options)
 driver.implicitly_wait(3)
 driver.get('https://lms.knu.ac.kr/ilos/main/member/login_form.acl')
-driver.find_element_by_name('usr_id').send_keys('yeahl97')
+# lms login page 
+driver.find_element_by_name('usr_id').send_keys('<id>')
 driver.find_element_by_name('usr_pwd').send_keys('<pwd>')
 driver.find_element_by_xpath('//*[@id="myform"]/div/div/div/div[1]').click()
-for page in range(2,5):
+page=1
+while True:
+    # Into the subject page
     driver.get('https://lms.knu.ac.kr/ilos/main/main_form.acl')
-    submain_page=driver.find_element_by_xpath('//*[@id="contentsIndex"]/div[2]/div[2]/ol/li[%s]/em' %page).click()
-    subject_name=driver.find_element_by_css_selector('#welcome_form > div.welcome_title.site-mouseover-color > div > span.welcome_subject')
+    page=page+1
+    try:
+        submain_page=driver.find_element_by_xpath('//*[@id="contentsIndex"]/div[2]/div[2]/ol/li[%s]/em' %page).click()
+        subject_name=driver.find_element_by_css_selector('#welcome_form > div.welcome_title.site-mouseover-color > div > span.welcome_subject')
+    except:
+        page=page-1
+        print("No more subject")
+        break
     sql=f"INSERT IGNORE INTO subject(name_subject) values('{subject_name.text}');"
     #print(sql)
     try:
@@ -52,6 +63,7 @@ for page in range(2,5):
         except:
             #print("no lecture page")
             break
+        # Into the lecture page
         while True:
             m=m+1
             try:
@@ -79,10 +91,10 @@ for page in range(2,5):
                 print(e)
             finally:
                 conn.commit()
-    # 과제 페이지
     driver.back() #go back to submain page
     assign_page=driver.find_element_by_css_selector('#submain-contents > div.submain-leftarea > div:nth-child(7) > div.submain-noticebox > ol > li:nth-child(6)').click()
     n=0
+    # Into the assignment page
     while True:
         try:
             n=n+1
