@@ -2,7 +2,7 @@ import requests
 from selenium import webdriver
 import MySQLdb
 
-conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin","Qwerty12^^","calms")
+conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
 curs=conn.cursor()
 print("connected to database")
 
@@ -18,7 +18,7 @@ driver=webdriver.Chrome(executable_path='./chromedriver',chrome_options=options)
 driver.implicitly_wait(3)
 driver.get('https://lms.knu.ac.kr/ilos/main/member/login_form.acl')
 driver.find_element_by_name('usr_id').send_keys('yeahl97')
-driver.find_element_by_name('usr_pwd').send_keys('Qwerty12^^')
+driver.find_element_by_name('usr_pwd').send_keys('<pwd>')
 driver.find_element_by_xpath('//*[@id="myform"]/div/div/div/div[1]').click()
 for page in range(2,5):
     driver.get('https://lms.knu.ac.kr/ilos/main/main_form.acl')
