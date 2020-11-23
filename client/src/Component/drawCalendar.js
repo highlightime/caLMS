@@ -2,7 +2,7 @@ import '../css/calendar.css';
 
 function drawCalendar(){
     return(
-        <div class = 'hi'>draw Calender</div>
+        <div className = 'hi'>draw Calender</div>
     )
 }
 
