@@ -10,15 +10,6 @@ function createColor(){
     return color[Math.round(Math.random() * 5)];
 }
 
-function makeButton(){
-    return{
-        text:'ADD',
-        click:function(){
-            alert('hi');
-        }
-    }
-}
-
 function fullCalendar(eventInfo){
     const INITIAL_EVENTS = Data.map((item) =>{
         const {title, start, end} = item;
@@ -35,9 +26,6 @@ function fullCalendar(eventInfo){
         }
     })
 
-    const addButton = makeButton()
-
-    console.log(addButton)
     return(
         <div className="fadeIn">
          <div className="calendar">
@@ -48,7 +36,7 @@ function fullCalendar(eventInfo){
                         headerToolbar={{
                             left: 'prev,next today',
                             center:'title',
-                            right:'dayGridMonth,dayGridWeek,timeGridDay addButton'
+                            right:'dayGridMonth,dayGridWeek,timeGridDay'
                         }}
                         buttonText={{
                             today: 'TODAY',

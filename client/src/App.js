@@ -22,14 +22,15 @@ function App(){
 
   return(    
     <Router>
-      <div background="white">
-      <nav className="navbar navbar-expand-md " style={{background:'#72CDFC'}}>
-        <div className="mx-auto order-0">
+      <nav className="navbar navbar-expand-md" style={{background:'#72CDFC'}}>
+       <ul className="nav justify-content-center">
+         <li className='nav-item'>
           <Link to="/">
-            <a href="#" className="navbar-brand mx-auto">
+            <a href="#" className="nav-link">
             <img src={'https://user-images.githubusercontent.com/49060014/99343070-86836a00-28d0-11eb-9749-ea659d51788c.jpg'} width={100 + 'px'}/></a>
           </Link>
-        </div>
+         </li>
+        </ul>
         <div className="collapse navbar-collapse justify-content-end fadeIn" id="navbarNavDropdown">
           <ul className="navbar-nav align-self-end" id="nav">
           <li className="nav-item">
@@ -38,9 +39,7 @@ function App(){
                 ) : (
                   <Link to="/login">
                     <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Login</span></a></h1>
-                  </Link>
-                )
-                }
+                  </Link> ) }
             </li>
             <li className="nav-item">
               {authenticated ? (
@@ -48,9 +47,7 @@ function App(){
                     <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Add Event</span></a></h1>
                   </Link>
                 ) : (
-                  <></>
-                )
-                }
+                  <></> )  }
             </li>
             <li className="nav-item">
               {authenticated ? (
@@ -58,9 +55,7 @@ function App(){
                     <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Calendar</span></a></h1>
                   </Link>
                 ) : (
-                  <></>
-                )
-                }
+                  <></> ) }
             </li>
             <li className="nav-item">
               {authenticated ? (
@@ -68,12 +63,10 @@ function App(){
                     <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Profile</span></a></h1>
                   </Link>
                 ) : (
-                  <></>
-                )
-                }
+                  <></> ) }
             </li>
           </ul>
-        </div>
+         </div>
         <div className='footer'></div>
       </nav>
       
@@ -103,7 +96,6 @@ function App(){
           />
         </Switch>
       </main>
-    </div>
     </Router>
   )
 }
