@@ -30,7 +30,7 @@ function LoginPage({authenticated, login, location}){
                 <div className="fadeIn first">
                     <img src={'https://user-images.githubusercontent.com/49060014/99343411-3062f680-28d1-11eb-8d4c-59c4b04d4e3e.png'} id='icon'/>
                 </div>
-                <form onSubmit={loginBtn}>
+                <form onSubmit={handleClick}>
                     <br/>
                     <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" className="fadeIn second" name="login" placeholder="LMS ID" style={{fontSize:25+'px'}}/>
                     <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" className="fadeIn third" name="login" placeholder="비밀번호" style={{fontSize:25+'px'}}/>

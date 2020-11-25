@@ -6,7 +6,7 @@ import './App.css';
 
 import Calendar from './Component/fullCalendar';
 import LoginPage from './Component/loginPage';
-import Profile from './Component/profile';
+import Setting from './Component/setting';
 import {signIn} from './Component/auth';
 import AuthRoute from './Component/authRoute';
 import HomePage from './Component/home'
@@ -23,24 +23,17 @@ function App(){
   return(    
     <Router>
       <nav className="navbar navbar-expand-md" style={{background:'#72CDFC'}}>
-       <ul className="nav justify-content-center">
+       <ul className="navbar-nav align-self-end navbar-toggle">
          <li className='nav-item'>
           <Link to="/">
-            <a href="#" className="nav-link">
-            <img src={'https://user-images.githubusercontent.com/49060014/99343070-86836a00-28d0-11eb-9749-ea659d51788c.jpg'} width={100 + 'px'}/></a>
+            <h1><a href="#" className="">
+            <span style={{color:'#fff'}}>CALMS</span>
+            </a></h1>
           </Link>
          </li>
         </ul>
         <div className="collapse navbar-collapse justify-content-end fadeIn" id="navbarNavDropdown">
-          <ul className="navbar-nav align-self-end" id="nav">
-          <li className="nav-item">
-              {authenticated ? (
-                <LogoutButton logout={logout}/>
-                ) : (
-                  <Link to="/login">
-                    <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Login</span></a></h1>
-                  </Link> ) }
-            </li>
+          <ul className="navbar-nav" id="nav">
             <li className="nav-item">
               {authenticated ? (
                   <Link to="/addEvent">
@@ -59,16 +52,25 @@ function App(){
             </li>
             <li className="nav-item">
               {authenticated ? (
-                  <Link to="/profile">
-                    <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Profile</span></a></h1>
+                  <Link to="/setting">
+                    <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Setting</span></a></h1>
                   </Link>
                 ) : (
                   <></> ) }
+            </li>
+      <li className="nav-item">
+              {authenticated ? (
+                <LogoutButton logout={logout}/>
+                ) : (
+                  <Link to="/login">
+                    <h1><a className="navbar-brand"><span style={{color:'#fff'}}>Login</span></a></h1>
+                  </Link> ) }
             </li>
           </ul>
          </div>
         <div className='footer'></div>
       </nav>
+
       
       <main>
         <Switch>
@@ -91,13 +93,13 @@ function App(){
           />
           <AuthRoute
             authenticated={authenticated}
-            path="/profile"
-            render={props=><Profile user={user} {...props}/>}
+            path="/setting"
+            render={props=><Setting user={user} {...props}/>}
           />
         </Switch>
       </main>
     </Router>
   )
 }
-
+     
 export default App;
