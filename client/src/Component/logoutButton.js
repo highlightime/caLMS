@@ -2,18 +2,18 @@ import {withRouter} from 'react-router-dom'
 
 function LogoutButton({logout, history}){
     const handleClick = () =>{
-        alert('Logout Success!');
+        alert("Logout Success!")
         logout()
         history.push('/')
     }
 
     return(
         <li class="nav-item">
-         <a href class="navbar-brand" onClick={handleClick} style={{cursor:"pointer"}}>Logout</a>
+         <h1><a className="navbar-brand" onClick={handleClick} style={{cursor:"pointer"}}>
+             <span style={{color:'#fff'}}>Logout</span>
+         </a></h1>
         </li>
     )
-
-    //return <button onClick = {handleClick} class="btn btn-outline-info">Logout</button>
 }
 
 export default withRouter(LogoutButton)
