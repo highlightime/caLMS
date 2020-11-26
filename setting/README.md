@@ -10,7 +10,7 @@
 ## mysql 접속
 
 ```
-mysql -u admin -p -h calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com
+mysql -u admin -p -h calms.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com
 ```
 
 ## schema name
@@ -22,7 +22,7 @@ use calms;
 ## python 에서 mysql 접속
 ```python
 import MySQLdb
-db=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
+db=MySQLdb.connect("calms.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
 ```
 
 ## database table 생성
