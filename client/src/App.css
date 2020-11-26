@@ -8,6 +8,10 @@ div {
   font-family: "Jua", sans-serif;
 }
 
+body {
+  padding-top: 2em;
+}
+
 .footer {
   background-color: black;
 }
@@ -39,31 +43,32 @@ div {
 }
 
 .navbar-toggle {
-    z-index:3;
-} 
+  z-index: 3;
+}
 
 .font {
-    font-family: 나눔명조, Nanum Myeongjo;
-    font-weight: bold;
-    font-size: 3em;
-    color: #333399;
-    text-align: center;
+  font-family: 나눔명조, Nanum Myeongjo;
+  font-weight: bold;
+  font-size: 3em;
+  color: #333399;
+  text-align: center;
 }
 .find-ment {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
 .row {
-    margin-right: -15px;
-    margin-left: -15px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
-.col-word,.col-image{
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    vertical-align: middle;
+.col-word,
+.col-image {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  vertical-align: middle;
 }
 @keyframes App-logo-spin {
   from {

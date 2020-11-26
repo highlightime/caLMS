@@ -1,7 +1,6 @@
 import React, {Component, useEffect, useState} from 'react';
 import {Link, Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
 import './App.css';
 
 import Calendar from './Component/fullCalendar';
@@ -22,13 +21,13 @@ function App(){
 
   return(    
     <Router>
-      <nav className="navbar navbar-expand-md" style={{background:'#72CDFC'}}>
+      <nav className="navbar navbar-expand-md fixed-top mb-2" style={{background:'#72CDFC'}}>
        <ul className="navbar-nav align-self-end navbar-toggle">
          <li className='nav-item'>
           <Link to="/">
-            <h1><a href="#" className="">
-            <span style={{color:'#fff'}}>CALMS</span>
-            </a></h1>
+            <a href="#" className="navbar-brand" style={{fontSize:1.5+'vw'}}>
+              <span style={{color:'#fff'}}>CALMS</span>
+            </a>
           </Link>
          </li>
         </ul>

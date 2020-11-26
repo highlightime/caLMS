@@ -2,7 +2,7 @@ import {withRouter} from 'react-router-dom'
 
 function LogoutButton({logout, history}){
     const handleClick = () =>{
-        alert('Logout Success!');
+        alert("Logout Success!")
         logout()
         history.push('/')
     }

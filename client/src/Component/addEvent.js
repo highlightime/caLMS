@@ -1,6 +1,6 @@
 function AddEvent(){
     return(
-        <div className='d-flex justify-content-center wrapper fadeIn'>
+        <div className='d-flex justify-content-center wrapper fadeIn mt-5'>
             <div id="formContent">
                 <form>
                     <h1><br/>일정 추가<br/><br/></h1>

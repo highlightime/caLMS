@@ -27,39 +27,41 @@ function fullCalendar(eventInfo){
     })
 
     return(
-        <div className="fadeIn">
-         <div className="calendar">
-            <br/>
-                <div className="calendar-main">
-                    <FullCalendar
-                        plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin]}
-                        headerToolbar={{
-                            left: 'prev,next today',
-                            center:'title',
-                            right:'dayGridMonth,dayGridWeek,timeGridDay'
-                        }}
-                        buttonText={{
-                            today: 'TODAY',
-                            month: 'MONTH',
-                            week: 'WEEK',
-                            day: 'DAY'
-                        }}
-                        initialView='dayGridWeek' // 초기 화면 세팅
-                        editable={false} // 마우스를 이용한 수정 불가
-                        selectable={true} // 
-                        navLinks={true} // 클릭시, 해당 날짜에 있는 일정을 보여줌
-                        selectMirror={true}
-                        dayMaxEvents={true}
-                        weekends={true}
-                        initialEvents={INITIAL_EVENTS}
-                        stickyHeaderDates={true}
-                        eventTextColor={'#3D3D3D'}
-                        firstDay={1}
-                        height={750+'px'}
-                    />
-                </div>
+        <body>
+            <div className="fadeIn">
+              <div className="calendar">
+                <br/>
+                    <div className="calendar-main">
+                        <FullCalendar
+                            plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin]}
+                            headerToolbar={{
+                                left: 'prev,next today',
+                                center:'title',
+                                right:'dayGridMonth,dayGridWeek,timeGridDay'
+                            }}
+                            buttonText={{
+                                today: 'TODAY',
+                                month: 'MONTH',
+                                week: 'WEEK',
+                                day: 'DAY'
+                            }}
+                            initialView='dayGridWeek' // 초기 화면 세팅
+                            editable={false} // 마우스를 이용한 수정 불가
+                            selectable={true} // 
+                            navLinks={true} // 클릭시, 해당 날짜에 있는 일정을 보여줌
+                            selectMirror={true}
+                            dayMaxEvents={true}
+                            weekends={true}
+                            initialEvents={INITIAL_EVENTS}
+                            stickyHeaderDates={true}
+                            eventTextColor={'#3D3D3D'}
+                            firstDay={1}
+                            height={750+'px'}
+                        />
+                 </div>
             </div>  
-      </div>
+        </div>
+      </body>
     )
 }
 

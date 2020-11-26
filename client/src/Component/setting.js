@@ -1,7 +1,7 @@
 function Setting({user}){
     const{ID, password, name} = user || {}
     return(
-        <div className='d-flex justify-content-center wrapper fadeIn'>
+        <div className='d-flex justify-content-center wrapper fadeIn mt-5'>
             <div id="formContent">
                 <form>
                     <h1><br/>ID : {ID}<br/></h1>
