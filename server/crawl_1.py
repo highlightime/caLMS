@@ -3,7 +3,7 @@ from selenium import webdriver
 import MySQLdb
 
 # Database connection
-conn=MySQLdb.connect("calms-database.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
+conn=MySQLdb.connect("calms.cyubjk2aho2f.ap-northeast-2.rds.amazonaws.com","admin",<pwd>,"calms")
 curs=conn.cursor()
 print("connected to database")
 
