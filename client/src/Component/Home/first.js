@@ -1,7 +1,8 @@
 import Typing from 'react-typing-animation';
-import Image from './images/7.png';
+import Image from './images/1.png';
 import {Container, Row, Col} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import './css/home.css';   
 
@@ -11,11 +12,11 @@ function First(){
             <Container>
                 <Row>
                     <Col xs={12} sm={12} md={6}>
-                        <div>
+                        <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'>
                             <div>
                                 <img src={Image} className="img-fluid"/>
                             </div>
-                        </div>
+                        </ScrollAnimation>
                     </Col>
                     <Col xs={12} sm={12} md={6} className="padding-top-btm-2e text-center">
                         <div className="fontSizeBig">

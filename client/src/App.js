@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Link, Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -11,13 +11,16 @@ import AuthRoute from './Component/authRoute';
 import HomePage from './Component/home'
 import LogoutButton from './Component/logoutButton';
 import AddEvent from './Component/addEvent';
+import TestPage from './Component/test';
 
-function App(){
+function App(props){
   const [user, setUser] = useState(null);
   const authenticated = user != null;
 
   const login = ({ID, password}) => setUser(signIn({ID, password}));
   const logout = () => setUser(null);
+
+  
 
   return(    
     <Router>
@@ -74,6 +77,7 @@ function App(){
       <main>
         <Switch>
           <Route exact path="/" component={HomePage}/>
+          <Route path="/test" component={TestPage}/>
           
           <Route
             path="/login"

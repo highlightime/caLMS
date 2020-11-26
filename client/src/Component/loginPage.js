@@ -36,7 +36,7 @@ function LoginPage({authenticated, login, location}){
                     <form onSubmit={handleClick}>
                         <br/>
                         <input type="text" onChange={({target:{value}}) => setID(value)} id="ID" className="fadeIn second" name="login" placeholder="LMS ID" style={{fontSize:25+'px'}}/>
-                        <input type="text" onChange={({target:{value}}) => setPassword(value)} id="password" className="fadeIn third" name="login" placeholder="비밀번호" style={{fontSize:25+'px'}}/>
+                        <input type="password" onChange={({target:{value}}) => setPassword(value)} id="pwd" className="fadeIn third" name="login" placeholder="비밀번호" style={{fontSize:25+'px'}}/>
                         
                         <input type="submit" className="fadeIn fourth" value="로그인" style={{fontSize:25+'px'}}/> {/* submit 수정 */}
                     </form>

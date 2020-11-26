@@ -1,19 +1,22 @@
-import Data from "../data/data.json";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-// ip : 3.34.58.93
+export default function Test(){
+    const [data, setData] = useState(null);
 
-class Test extends React.Component{
-    render(){
+    useEffect(() => {
+        fetch('http://localhost:3001',{
+            method:'GET',
+            headers:{'Content-Type':'application/json'}
+        })
+            .then(res=>{
+                console.log(res);
+                console.log(typeof(res));
+                return res.json();
+            })
+            .then(res => console.log(res));
+    });
 
-        return(
-        <form>
-            <input id="ID" placeholder="ID"></input>
-            <input id="password" placeholder="PassWord"></input>
-            <button type="submit">Login</button>
-        </form>
-        )
-    }
+    return(
+        <div>{data}</div>
+    )
 }
-
-export default Test;
