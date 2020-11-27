@@ -13,5 +13,5 @@ https://youtu.be/-Hes_87g58U
 ## 시스템 구조
 
 <div>
-  <img width="200" src="https://user-images.githubusercontent.com/58005728/100406030-3bbfda00-30a8-11eb-8167-94e95320532f.png") 
+  <img width="600" src="https://user-images.githubusercontent.com/58005728/100406030-3bbfda00-30a8-11eb-8167-94e95320532f.png") 
 </div>
