@@ -1,10 +1,16 @@
 # caLMS ( calendar + LMS )
 
 ## 유튜브 링크
+최종
+```
+https://www.youtube.com/watch?v=OSUweV0IQ90
 
+```
+프론트
 ```
 https://youtu.be/-Hes_87g58U
 ```
+백앤드
 ```
 https://youtu.be/gz7dSWZAwzM
 ```
